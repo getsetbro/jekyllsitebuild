@@ -1,0 +1,29 @@
+{% include bootstrap-header.html %}
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row" style="text-align: center">
+            <h1 style="margin-bottom: 12px">Tutorial</h1>
+        </div>
+    </div>
+</div>
+<div style="background-color: #f4f4f4;margin-top: -30px;border-bottom: solid 1px #ddd;padding:12px 0 6px 0;margin-bottom:30px;">
+    <div class="container">
+        <div class="row" style="text-align: center">
+            <div style="margin-left: 30px;">twitter
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    {{ content }}
+</div>
+<hr>
+{% for page in site.pages %}
+    {% if page.title %}
+    <a class="btn btn-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a> | 
+    {% endif %}
+{% endfor %}
+<hr>
+{% include bootstrap-footer.html %}
